@@ -10,7 +10,7 @@ export const register = ({ email, password }) => async (dispatch) => {
    const body = JSON.stringify({ email, password });
  
    try {
-     const res = await axios.post("/api/user/register", body, options);
+     const res = await axios.post("https://my-tasklist21.herokuapp.com/api/user/register", body, options);
  
      dispatch({
        type: "REGISTERED",
@@ -36,7 +36,7 @@ export const login = ({ email, password }) => async (dispatch) => {
     const body = JSON.stringify({ email, password });
   
     try {
-      const res = await axios.post("/api/user/login", body, options);
+      const res = await axios.post("https://my-tasklist21.herokuapp.com/api/user/login", body, options);
   
       dispatch({
         type: "LOGGED_IN",

@@ -12,7 +12,7 @@ export const getTodos = () => async (dispatch) => {
   };
 
   try {
-    const res = await axios.get("/api/todos", options);
+    const res = await axios.get("https://my-tasklist21.herokuapp.com/api/todos", options);
     dispatch({
       type: "GET_TODOS",
       payload: res.data,
@@ -41,7 +41,7 @@ export const createTodo =
     const body = JSON.stringify({ task });
 
     try {
-      const res = await axios.post("/api/todos", body, options);
+      const res = await axios.post("https://my-tasklist21.herokuapp.com/api/todos", body, options);
 
       dispatch({
         type: "CREATED_TODO",
@@ -71,7 +71,7 @@ export const editTodo =
     const body = JSON.stringify({ task: value });
     try {
       const res = await axios.put(
-        `/api/todo/${todoId}`,
+        `https://my-tasklist21.herokuapp.com/api/todo/${todoId}`,
         body,
         options
       );
@@ -104,7 +104,7 @@ export const completeTodo =
     const body = JSON.stringify({ completed: !value });
     try {
       const res = await axios.put(
-        `/api/todo/complete/${todoId}`,
+        `https://my-tasklist21.herokuapp.com/api/todo/complete/${todoId}`,
         body,
         options
       );
@@ -138,7 +138,7 @@ export const deleteTodo =
 
     try {
       const res = await axios.delete(
-        `/api/todo/${todoId}`,
+        `https://my-tasklist21.herokuapp.com/api/todo/${todoId}`,
         options
       );
 
