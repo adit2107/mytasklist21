@@ -161,7 +161,6 @@ export const deleteTodo =
 
 export const setTodos = (todos) => async (dispatch) => {
   if (localStorage.token) setToken(localStorage.token);
-  console.log(todos)
   try {
     dispatch({
       type: "SET_ORDER",
