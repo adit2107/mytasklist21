@@ -18,7 +18,7 @@ try {
         email
     })
 
-    if (!user) return res.status(400).send({ message: `Email already exists!` })
+    if (!user) return res.status(400).send({ message: `Email is not registered!` })
 
     const verifiedPassword = await bcrypt.compare(password, user.password)
 
